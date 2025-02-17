@@ -21,7 +21,7 @@ Python script to migrate dashboards and folder structure from one Grafana instan
 1. Clone the repository
 2. Install dependencies:
 ```bash
-pip install requests
+pip install -r requirements.txt
 ```
 
 ## Configuration
@@ -49,6 +49,27 @@ The script will:
 1. Create the folder structure from source Grafana
 2. Migrate dashboards to their respective folders
 3. Show progress and any errors during migration
+
+## Development
+
+### Running Tests
+```bash
+pip install pytest
+pytest test_grafana_migrator.py -v
+```
+
+### Code Style
+Project uses flake8 with custom configuration:
+```ini
+# .flake8
+[flake8]
+extend-ignore = C901
+```
+
+To check code style:
+```bash
+flake8 .
+```
 
 ## API Token Permissions
 
